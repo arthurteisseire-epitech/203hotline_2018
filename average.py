@@ -5,7 +5,7 @@ def average(d):
     array = []
     for i in range(0, 50):
         array.append(lb(3500, i, d / 28800))
-    print_distribution("Binomial", array, 0, 0)
+    print_distribution("Binomial", array, 1 - sum(array[:26]), 0)
 
 
 def print_distribution(method_name, array, overload, compute_time):
@@ -16,7 +16,7 @@ def print_distribution(method_name, array, overload, compute_time):
         print("%d -> %.3f" % (i, array[i]), end="")
         tab = "\t"
     print("")
-    print("overload:  %.1f%%" % overload)
+    print("overload:  %.1f%%" % (overload * 100))
     print("computation time:  %.2f ms" % compute_time)
 
 
