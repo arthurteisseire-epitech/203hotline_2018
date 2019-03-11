@@ -28,7 +28,7 @@ def print_distribution(method_name, array, overload, compute_time):
         tab = "\t"
     print("")
     print("overload:  %.1f%%" % (overload * 100))
-    print("computation time:  %.2f ms" % compute_time)
+    print("computation time:  %.2f ms" % (compute_time * 1000))
 
 
 def lb(n, k, p):
