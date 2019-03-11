@@ -3,10 +3,14 @@ import time
 
 
 def average(d):
+    compute_with_method(d, lb)
+
+
+def compute_with_method(d, formula):
     array = []
     start_time = time.time()
     for i in range(0, 50):
-        array.append(lb(3500, i, d / 28800))
+        array.append(formula(3500, i, d / 28800))
     print_distribution("Binomial", array, 1 - sum(array[:26]), time.time() - start_time)
 
 
