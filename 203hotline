@@ -1,7 +1,11 @@
 #!/usr/bin/python
+
 from parse import parse_args
+from comb import comb
 
 
 args = parse_args()
+if args.k > args.n:
+    exit(84)
 
-
+print("%d" % comb(args.n, args.k))
