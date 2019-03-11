@@ -11,7 +11,7 @@ def average(d):
 def compute_with_method(d, formula, method_name):
     array = []
     start_time = time.time()
-    for i in range(0, 50):
+    for i in range(0, 51):
         array.append(formula(3500, i, d / 28800))
     print_distribution(method_name, array, 1 - sum(array[:26]), time.time() - start_time)
 
@@ -20,7 +20,10 @@ def print_distribution(method_name, array, overload, compute_time):
     print("%s distribution:" % method_name)
     tab = ""
     for i in range(0, len(array)):
-        print(tab, end="")
+        if i % 6 == 0:
+            print("")
+        else:
+            print(tab, end="")
         print("%d -> %.3f" % (i, array[i]), end="")
         tab = "\t"
     print("")
