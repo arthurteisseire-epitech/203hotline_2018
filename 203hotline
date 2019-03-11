@@ -6,11 +6,17 @@ from compute import compute
 from average import average
 
 
-args = parse_args()
+def execute():
+    args = parse_args()
+    if len(sys.argv) == 3:
+        compute(args.n, args.k)
+    elif len(sys.argv) == 2:
+        average(args.d)
+    else:
+        exit(84)
 
-if len(sys.argv) == 3:
-    compute(args.n, args.k)
-elif len(sys.argv) == 2:
-    average(args.d)
-else:
+
+try:
+    execute()
+except:
     exit(84)
