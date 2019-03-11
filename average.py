@@ -1,11 +1,13 @@
 import math
+import time
 
 
 def average(d):
     array = []
+    start_time = time.time()
     for i in range(0, 50):
         array.append(lb(3500, i, d / 28800))
-    print_distribution("Binomial", array, 1 - sum(array[:26]), 0)
+    print_distribution("Binomial", array, 1 - sum(array[:26]), time.time() - start_time)
 
 
 def print_distribution(method_name, array, overload, compute_time):
