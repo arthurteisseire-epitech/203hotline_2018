@@ -1,11 +1,16 @@
 #!/usr/bin/python
 
+import sys
 from parse import parse_args
-from comb import comb
+from compute import compute
+from average import average
 
 
 args = parse_args()
-if args.k > args.n:
-    exit(84)
 
-print("%d" % comb(args.n, args.k))
+if len(sys.argv) == 3:
+    compute(args.n, args.k)
+elif len(sys.argv) == 2:
+    average(args.d)
+else:
+    exit(84)

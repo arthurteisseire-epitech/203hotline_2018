@@ -1,0 +1,3 @@
+def average(d):
+    pass
+
