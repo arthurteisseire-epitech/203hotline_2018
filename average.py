@@ -5,6 +5,7 @@ import time
 def average(d):
     compute_with_method(d, lb, "Binomial")
     print("")
+    compute_with_method(d, lp, "Poisson")
 
 
 def compute_with_method(d, formula, method_name):
@@ -32,3 +33,8 @@ def lb(n, k, p):
     proba_ko = pow(1 - p, n - k)
     comb = math.factorial(n) / (math.factorial(k) * math.factorial(n - k))
     return proba_ok * proba_ko * comb
+
+
+def lp(n, k, p):
+    y = n * p
+    return math.exp(-y) * (pow(y, k) / math.factorial(k))
