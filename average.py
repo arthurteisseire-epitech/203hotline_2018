@@ -20,7 +20,7 @@ def print_distribution(method_name, array, overload, compute_time):
     print("%s distribution:" % method_name)
     tab = ""
     for i in range(0, len(array)):
-        if i % 6 == 0:
+        if i % 6 == 0 and i != 0:
             print("")
         else:
             print(tab, end="")
